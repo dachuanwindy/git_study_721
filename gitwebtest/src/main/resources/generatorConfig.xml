@@ -33,7 +33,7 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bj.tomato.gitwebtest.dto.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bj.tomato.gitwebtest.dao.mapper"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>

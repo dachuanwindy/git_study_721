@@ -68,10 +68,10 @@ public class Userinfo implements Serializable {
         }
         Userinfo other = (Userinfo) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-                && (this.getUname() == null ? other.getUname() == null : this.getUname().equals(other.getUname()))
-                && (this.getUage() == null ? other.getUage() == null : this.getUage().equals(other.getUage()))
-                && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
-                && (this.getIdcardNo() == null ? other.getIdcardNo() == null : this.getIdcardNo().equals(other.getIdcardNo()));
+            && (this.getUname() == null ? other.getUname() == null : this.getUname().equals(other.getUname()))
+            && (this.getUage() == null ? other.getUage() == null : this.getUage().equals(other.getUage()))
+            && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
+            && (this.getIdcardNo() == null ? other.getIdcardNo() == null : this.getIdcardNo().equals(other.getIdcardNo()));
     }
 
     @Override
