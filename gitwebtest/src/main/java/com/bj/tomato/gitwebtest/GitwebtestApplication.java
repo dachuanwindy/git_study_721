@@ -2,6 +2,7 @@ package com.bj.tomato.gitwebtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
 
 /**
@@ -9,7 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description: 实现test
  * @date 2020/1/11 23:12
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.bj.tomato.gitwebtest")
+@ImportResource({"classpath*:spring/spring.xml"})
 public class GitwebtestApplication {
     public static void main(String[] args) {
         SpringApplication.run(GitwebtestApplication.class, args);

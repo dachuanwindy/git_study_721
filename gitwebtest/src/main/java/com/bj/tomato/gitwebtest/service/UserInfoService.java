@@ -1,5 +1,6 @@
 package com.bj.tomato.gitwebtest.service;
 
+import com.bj.tomato.gitwebtest.dto.model.Userinfo;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,4 +13,12 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserInfoService {
 
+
+    /**
+     * @Param: id
+     * @return: userInfo
+     * @Author: sunfch
+     * @Date: 2020/1/12
+     */
+    Userinfo getUserInfo(Long id);
 }

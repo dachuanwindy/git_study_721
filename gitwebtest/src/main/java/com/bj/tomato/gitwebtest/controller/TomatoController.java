@@ -4,6 +4,7 @@ import com.bj.tomato.gitwebtest.dto.model.PlateFormResponse;
 import com.bj.tomato.gitwebtest.dto.model.ResponseUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "tomato")
 public class TomatoController {
 
+    // @Autowired
+    //  private UserInfoService userInfoService;
+
     @RequestMapping(value = "test1")
     public String dataStr() {
         return "西红柿网开发中";
@@ -30,5 +34,15 @@ public class TomatoController {
         PlateFormResponse response = ResponseUtils.plateFormResponseBuildFail("1", "sunfengchuan ");
         return response;
 
+    }
+
+
+    @GetMapping(value = "mybatisTest/{id}")
+    public PlateFormResponse mybatisTest(@PathVariable Long id) {
+        //  Userinfo userInfo = userInfoService.getUserInfo(id);
+        com.bj.tomato.dto.model.Userinfo userInfo2 = new com.bj.tomato.dto.model.Userinfo();
+        // userinfoMapper22.select(userInfo2);
+        //   return ResponseUtils.plateFormResponseBuildSuccess(userInfo);
+        return null;
     }
 }

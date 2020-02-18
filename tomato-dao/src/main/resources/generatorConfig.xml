@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="/Users/dachuan/.m2/repository/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar"/>
+    <context id="context1" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!--1.3.2之前的版本没有此plugin-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterset=utf-8"
+                        userId="root" password="dachuan123456!"/>
+
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.bj.tomato.dto.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="main.resources.mapper.com.bj.tomato" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bj.tomato.dao.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <table schema="general" tableName="userinfo"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+        <!-- <table schema="general" tableName="payment_mid_origin_result"
+                enableCountByExample="false"
+                enableUpdateByExample="false"
+                enableDeleteByExample="false"
+                enableSelectByExample="false"
+                selectByExampleQueryId="false">
+         </table>-->
+
+    </context>
+</generatorConfiguration>

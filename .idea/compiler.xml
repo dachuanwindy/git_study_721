@@ -8,15 +8,20 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gitwebtest" />
         <module name="contract" />
+        <module name="tomato-dao" />
+        <module name="cucumber" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="contract" target="1.5" />
-      <module name="gitwebtest" target="1.8" />
+      <module name="contract" target="1.7" />
+      <module name="cucumber" target="1.7" />
+      <module name="gitwebtest" target="1.7" />
+      <module name="tomato-dao" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cucumber" options="-parameters" />
       <module name="gitwebtest" options="-parameters" />
     </option>
   </component>
