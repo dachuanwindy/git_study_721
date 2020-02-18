@@ -13,10 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class GitwebtestApplicationTests {
 
 
-    /*
-        @Autowired
-        private UserInfoService userInfoService;
-    */
     @Autowired
     private RedissonClient redissonClient;
 
