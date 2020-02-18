@@ -22,3 +22,4 @@
 中在cucumber中实现了redisTemplate分布式锁，亲测可以使用
 在gitwebtest里面实现了 redisson 分布式锁，项目能正常启动，也能跑起来
 接下来深入研究：lura表达式实现分布式锁；
+注意： 在cucumber中能正常使用 lua 脚本实现了，更详细的了解下lua 执行原理；
