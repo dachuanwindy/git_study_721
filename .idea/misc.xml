@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/contract/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/tomato-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/es-job/pom.xml" />
       </list>
     </option>
   </component>

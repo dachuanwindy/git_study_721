@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/contract/contract.iml" filepath="$PROJECT_DIR$/contract/contract.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/cucumber.iml" filepath="$PROJECT_DIR$/demo/cucumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/es-job/es-job.iml" filepath="$PROJECT_DIR$/es-job/es-job.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitwebtest/gitwebtest.iml" filepath="$PROJECT_DIR$/gitwebtest/gitwebtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/tomato.iml" filepath="$PROJECT_DIR$/.idea/tomato.iml" />
       <module fileurl="file://$PROJECT_DIR$/tomato-dao/tomato-dao.iml" filepath="$PROJECT_DIR$/tomato-dao/tomato-dao.iml" />
