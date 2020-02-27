@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
  * @author sunfch
  * @version V1.0
  * @Description: 注册中心，连接到zookeeper中 这个是任务调度系统关键
+ *
+ * 任务调度的灵魂，实现了分布式锁，任务的分配，分片信息的编写
  * @date 2020/2/23 00:16
  */
 @Configuration
