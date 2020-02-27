@@ -18,8 +18,6 @@ import org.springframework.stereotype.Component;
 public class FileSimpleJob implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
-
         log.info("这就是任务调度系统实现");
-
     }
 }
