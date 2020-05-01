@@ -2,6 +2,8 @@ package com.bj.tomato.gitwebtest.controller;
 
 import com.bj.tomato.gitwebtest.dto.model.PlateFormResponse;
 import com.bj.tomato.gitwebtest.dto.model.ResponseUtils;
+import com.bj.tomato.gitwebtest.dto.model.request.ProductsQueryReq;
+import com.bj.tomato.gitwebtest.util.paramvalid.ParamValid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,5 +46,22 @@ public class TomatoController {
         // userinfoMapper22.select(userInfo2);
         //   return ResponseUtils.plateFormResponseBuildSuccess(userInfo);
         return null;
+    }
+
+    /**
+     * description: 查询产品属性信息
+     *
+     * @param productsQueryReq
+     * @return com.bj.tomato.gitwebtest.dto.model.PlateFormResponse
+     */
+    @RequestMapping(value = "valid")
+    public PlateFormResponse validData(ProductsQueryReq productsQueryReq) {
+
+        ParamValid.volidateToException(productsQueryReq);
+        PlateFormResponse response = new PlateFormResponse();
+        response.setCode("11");
+        response.setMsg("12333");
+        response.setData(productsQueryReq);
+        return response;
     }
 }
