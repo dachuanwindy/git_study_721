@@ -71,7 +71,7 @@ public class ParamValid {
     }
 
     /**
-     * description:
+     * description: 参数校验类
      *
      * @param t
      * @return com.bj.tomato.common.ResultCode.BasePlatformResponse
