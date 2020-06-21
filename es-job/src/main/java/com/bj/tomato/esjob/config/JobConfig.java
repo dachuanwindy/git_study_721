@@ -1,6 +1,7 @@
 package com.bj.tomato.esjob.config;
 
 import com.bj.tomato.esjob.job.FileSimpleJob;
+import com.bj.tomato.esjob.job.MyJob;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 import com.dangdang.ddframe.job.config.JobCoreConfiguration;
 import com.dangdang.ddframe.job.config.simple.SimpleJobConfiguration;
@@ -68,6 +69,23 @@ public class JobConfig {
         SpringJobScheduler springJobScheduler = new SpringJobScheduler(fileSimpleJob,
                 registerConfig.registryCenter(),
                 createJobConfiguration(fileSimpleJob.getClass(), "0/10 * * * * ?", 4, "0=text,1=image,2=radio,3=vedio"),
+                jobEventConfig);
+        return springJobScheduler;
+    }
+
+    @Autowired
+    MyJob myJob;
+
+    @Bean(initMethod = "init")
+    public SpringJobScheduler myJob2222() {
+
+        //时间追踪，将信息写在数据库中
+        JobEventConfiguration jobEventConfig = new JobEventRdbConfiguration(dataSource);
+
+        //任务执行计划
+        SpringJobScheduler springJobScheduler = new SpringJobScheduler(myJob,
+                registerConfig.registryCenter(),
+                createJobConfiguration(myJob.getClass(), "0/20 * * * * ?", 4, "0=text,1=image,2=radio,3=vedio"),
                 jobEventConfig);
         return springJobScheduler;
     }

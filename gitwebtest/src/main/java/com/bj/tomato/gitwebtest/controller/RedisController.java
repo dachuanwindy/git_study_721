@@ -7,6 +7,7 @@ import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,9 @@ public class RedisController {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private StringRedisTemplate redisTemplate1;
 
     @Autowired
     private RedissonClient redissonClient;
@@ -68,6 +72,7 @@ public class RedisController {
 
         boolean b = lock.tryLock(2, TimeUnit.SECONDS);
 
+        redisTemplate1.opsForValue().setIfAbsent("", "", 100, TimeUnit.SECONDS);
         lock.unlock();
         log.info("==尝试加锁=={}", b);
         return "加锁结果";

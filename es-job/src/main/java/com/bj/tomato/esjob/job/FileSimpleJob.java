@@ -16,8 +16,16 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class FileSimpleJob implements SimpleJob {
+
+    /**
+     * description:
+     *
+     * @param shardingContext
+     * @return void
+     */
     @Override
     public void execute(ShardingContext shardingContext) {
+        String shardingParameter = shardingContext.getShardingParameter();
         log.info("这就是任务调度系统实现");
     }
 }

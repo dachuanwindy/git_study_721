@@ -8,11 +8,18 @@ import com.bj.tomato.gitwebtest.dto.model.Userinfo;
  * @date 2020/1/6 23:59
  */
 public interface UserinfoMapper1 {
+
     int insert(Userinfo record);
 
     int insertSelective(Userinfo record);
 
-    Userinfo querUserInfo(Long id);
+    /**
+     * description:  获取用户基本信息
+     *
+     * @param id
+     * @return com.bj.tomato.gitwebtest.dto.model.Userinfo
+     */
+    Userinfo queryUserInfo(Long id);
 
 
 }
