@@ -17,6 +17,9 @@ import org.springframework.stereotype.Component;
 public class MyJob implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
+        //分片参数, 主要是通过这个参数实现对不同分片执行不同的任务.  shardingParam 对不同的业务进行细分
+        String shardingParameter = shardingContext.getShardingParameter();
+        log.info("任务ID=={} 当前的是哪个分片===={}, 设置的参数是=={}", shardingContext.getTaskId(), shardingContext.getShardingItem(), shardingParameter);
         log.info("输出配置信息===={}", shardingContext.toString());
     }
 }

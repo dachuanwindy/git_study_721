@@ -1,0 +1,7 @@
+
+
+kafka 组成部分:
+1. 组成部分:broker[实例]
+2. topic:
+3. partition:  几个分区;
+4. 通过zookeeper 实现partition的选举;
