@@ -18,5 +18,6 @@ public class Product {
     public void send(String name) {
         String dataBody = "这个是第一次实现kafka";
         kafkaTemplate.send("user", dataBody);
+
     }
 }
