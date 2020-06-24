@@ -1,7 +1,12 @@
 package com.bj.tomato.gitwebtest.service;
 
+import com.alibaba.fastjson.JSON;
+import com.bj.tomato.gitwebtest.dao.mapper.UserinfoMapper1;
 import com.bj.tomato.gitwebtest.dto.model.Userinfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author sunfch
@@ -10,24 +15,17 @@ import org.springframework.stereotype.Service;
  * @date 2020/1/7 00:03
  */
 @Service
+@Slf4j
 public class UserInfoServiceImpl implements UserInfoService {
 
 
-    //  @Resource
-    //   private UserinfoMapper userinfoMapper;
+    @Resource
+    UserinfoMapper1 mapper;
 
-    /**
-     * 实现获取Mybatis中的最新消息
-     *
-     * @Param: id
-     * @return: userInfo
-     * @Author: sunfch
-     * @Date: 2020/1/12
-     */
     @Override
     public Userinfo getUserInfo(Long id) {
-        // Userinfo userinfo = userinfoMapper.querUserInfo(id);
-        return null
-                ;
+        Userinfo userinfo = mapper.querUserInfo(1L);
+        log.info("输出的结果是===={}", JSON.toJSONString(userinfo));
+        return userinfo;
     }
 }

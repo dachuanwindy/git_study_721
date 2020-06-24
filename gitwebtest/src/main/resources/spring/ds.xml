@@ -19,12 +19,11 @@
         <!--        <property name="maximumPoolSize" value="${guide.parent.maxActive}"/>-->
         <!--        <property name="minimumIdle" value="${guide.parent.minIdle}"/>-->
     </bean>
-
     <!-- mybatis factory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis.xml"/>
-        <property name="mapperLocations" value="classpath*:mapper/**/*.xml"/>
+        <property name="mapperLocations" value="classpath*:mapper/com/bj/tomato/gitwebtest/**/*.xml"/>
     </bean>
 
     <!-- scan mappers under the dao dir -->

@@ -2,9 +2,12 @@ package com.bj.tomato.gitwebtest.controller;
 
 import com.bj.tomato.gitwebtest.dto.model.PlateFormResponse;
 import com.bj.tomato.gitwebtest.dto.model.ResponseUtils;
+import com.bj.tomato.gitwebtest.dto.model.Userinfo;
 import com.bj.tomato.gitwebtest.dto.model.request.ProductsQueryReq;
+import com.bj.tomato.gitwebtest.service.UserInfoService;
 import com.bj.tomato.gitwebtest.util.paramvalid.ParamValid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "tomato")
 public class TomatoController {
 
-    // @Autowired
-    //  private UserInfoService userInfoService;
+    @Autowired
+    UserInfoService userInfoService;
 
     @RequestMapping(value = "test1")
     public String dataStr() {
@@ -39,13 +42,12 @@ public class TomatoController {
     }
 
 
-    @GetMapping(value = "mybatisTest/{id}")
+    @GetMapping(value = "/mybatisTest/{id}")
     public PlateFormResponse mybatisTest(@PathVariable Long id) {
-        //  Userinfo userInfo = userInfoService.getUserInfo(id);
-        com.bj.tomato.dto.model.Userinfo userInfo2 = new com.bj.tomato.dto.model.Userinfo();
-        // userinfoMapper22.select(userInfo2);
-        //   return ResponseUtils.plateFormResponseBuildSuccess(userInfo);
-        return null;
+        Userinfo userInfo = userInfoService.getUserInfo(1L);
+        PlateFormResponse<Userinfo> response = new PlateFormResponse<>();
+        response.setData(userInfo);
+        return response;
     }
 
     /**

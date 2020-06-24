@@ -1,7 +1,6 @@
 package com.bj.tomato.gitwebtest.service;
 
 import com.bj.tomato.gitwebtest.dto.model.Userinfo;
-import org.springframework.stereotype.Service;
 
 /**
  * @author sunfch
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
  * @date 2020/1/7 00:02
  */
 
-@Service
 public interface UserInfoService {
 
 

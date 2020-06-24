@@ -2,6 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
+    <!-- 这个是根据设计的表结构信息,自动生成相关文件的插件-->
     <classPathEntry
             location="/Users/dachuan/.m2/repository/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar"/>
     <context id="context1" targetRuntime="MyBatis3" defaultModelType="flat">
@@ -22,7 +23,6 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterset=utf-8"
                         userId="root" password="dachuan123456!"/>
-
         <!-- 生成模型的包名和位置-->
         <javaModelGenerator targetPackage="com.bj.tomato.gitwebtest.dto.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>

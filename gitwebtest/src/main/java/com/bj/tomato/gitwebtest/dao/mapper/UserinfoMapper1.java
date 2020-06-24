@@ -19,7 +19,6 @@ public interface UserinfoMapper1 {
      * @param id
      * @return com.bj.tomato.gitwebtest.dto.model.Userinfo
      */
-    Userinfo queryUserInfo(Long id);
-
+    Userinfo querUserInfo(Long id);
 
 }
