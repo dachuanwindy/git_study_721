@@ -8,10 +8,9 @@ import com.bj.tomato.gitwebtest.service.UserInfoService;
 import com.bj.tomato.gitwebtest.util.paramvalid.ParamValid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author sunfch
@@ -41,9 +40,15 @@ public class TomatoController {
 
     }
 
-
+    /**
+     * @description: Mybatis功能初始化成功
+     * @author sunfch
+     * @date 2020/6/24 22:48
+     */
     @GetMapping(value = "/mybatisTest/{id}")
-    public PlateFormResponse mybatisTest(@PathVariable Long id) {
+    public PlateFormResponse mybatisTest(@RequestBody Userinfo userinfo, @PathVariable Long id, HttpServletRequest request) {
+
+        request.getParameter("");
         Userinfo userInfo = userInfoService.getUserInfo(1L);
         PlateFormResponse<Userinfo> response = new PlateFormResponse<>();
         response.setData(userInfo);

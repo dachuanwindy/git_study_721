@@ -21,12 +21,9 @@ class RedisControllerTest {
     @Test
     public void stringStoreTest() {
 
-
         RLock lock = redissonClient.getLock(key);
-
         RKeys keys = redissonClient.getKeys();
         System.out.println(keys);
-
 
         RBucket<Object> sunfengchuan = redissonClient.getBucket(key);
         sunfengchuan.set("今天学习redis");
@@ -43,7 +40,6 @@ class RedisControllerTest {
         Object o = bucket.get();
         log.info(o.toString());
     }
-
 
     // MAP 方式的存储
     final String MapKey = "MAP:STORE:KEY";
@@ -96,9 +92,9 @@ class RedisControllerTest {
     //zset 放入值与获取值;
     @Test
     public void zSetGet() {
-        redissonClient.getScoredSortedSet(zSetKey).addScore(1231,89);
-        redissonClient.getScoredSortedSet(zSetKey).addScore(1232,90);
-        redissonClient.getScoredSortedSet(zSetKey).addScore(1233,91);
-        redissonClient.getScoredSortedSet(zSetKey).addScore(12355,78);
+        redissonClient.getScoredSortedSet(zSetKey).addScore(1231, 89);
+        redissonClient.getScoredSortedSet(zSetKey).addScore(1232, 90);
+        redissonClient.getScoredSortedSet(zSetKey).addScore(1233, 91);
+        redissonClient.getScoredSortedSet(zSetKey).addScore(12355, 78);
     }
 }

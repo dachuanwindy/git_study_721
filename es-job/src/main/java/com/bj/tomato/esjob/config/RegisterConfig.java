@@ -22,11 +22,11 @@ public class RegisterConfig {
     /**
      * 连接到zookeeper的本地地址；
      */
-    private String ZOOKEEPER_CONNECTION_STRING = "localhost:2181";
+    private String ZOOKEEPER_CONNECTION_STRING = "127.0.0.1:2181";
     /**
      * 定时任务命名空间
      */
-    private String JOB_NAMESPACE = "elastic-job-example-java";
+    private String JOB_NAMESPACE = "elastic-job-example-java-sun";
 
 
     /**
