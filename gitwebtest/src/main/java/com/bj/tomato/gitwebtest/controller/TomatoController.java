@@ -8,7 +8,10 @@ import com.bj.tomato.gitwebtest.service.UserInfoService;
 import com.bj.tomato.gitwebtest.util.paramvalid.ParamValid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -46,9 +49,13 @@ public class TomatoController {
      * @date 2020/6/24 22:48
      */
     @GetMapping(value = "/mybatisTest/{id}")
-    public PlateFormResponse mybatisTest(@RequestBody Userinfo userinfo, @PathVariable Long id, HttpServletRequest request) {
+    public PlateFormResponse mybatisTest(@PathVariable Long id, HttpServletRequest request) {
 
-        request.getParameter("");
+
+        byte[] bytes = new byte[1024 * 1024 * 50];
+        int length = bytes.length;
+        System.out.println(length);
+
         Userinfo userInfo = userInfoService.getUserInfo(1L);
         PlateFormResponse<Userinfo> response = new PlateFormResponse<>();
         response.setData(userInfo);

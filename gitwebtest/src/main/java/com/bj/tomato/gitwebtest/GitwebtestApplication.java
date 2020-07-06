@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @SpringBootApplication(scanBasePackages = "com.bj.tomato.gitwebtest")
 @ImportResource({"classpath*:spring/spring.xml"})
+//@MapperScan("com.bj.tomato.gitwebtest.dao.mapper")
 public class GitwebtestApplication {
     public static void main(String[] args) {
         SpringApplication.run(GitwebtestApplication.class, args);

@@ -21,5 +21,8 @@ public class MyJob implements SimpleJob {
         String shardingParameter = shardingContext.getShardingParameter();
         log.info("任务ID=={} 当前的是哪个分片===={}, 设置的参数是=={}", shardingContext.getTaskId(), shardingContext.getShardingItem(), shardingParameter);
         log.info("输出配置信息===={}", shardingContext.toString());
+        String name = Thread.currentThread().getName();
+        System.out.println("当前线程的名字是====>>>>>>>>" + name);
+
     }
 }

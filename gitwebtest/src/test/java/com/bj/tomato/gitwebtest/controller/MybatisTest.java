@@ -1,5 +1,6 @@
 package com.bj.tomato.gitwebtest.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.bj.tomato.gitwebtest.dao.mapper.UserinfoMapper1;
 import com.bj.tomato.gitwebtest.dto.model.Userinfo;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,7 @@ public class MybatisTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserinfoMapper1 mapper = sqlSession.getMapper(UserinfoMapper1.class);
         Userinfo userinfo = mapper.querUserInfo(1L);
+        System.out.println(JSON.toJSONString(userinfo));
     }
 
 
