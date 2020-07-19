@@ -27,7 +27,6 @@ public class EsConfig {
 
         RestHighLevelClient restHighLevelClient = new RestHighLevelClient(RestClient.builder(
                 new HttpHost("localhost", 9200, "http")));
-
         return restHighLevelClient;
 
     }

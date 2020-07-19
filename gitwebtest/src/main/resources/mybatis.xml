@@ -7,4 +7,13 @@
         <setting name="callSettersOnNulls" value="true"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+
+    <!-- 插件配置 problem is here  -->
+    <!--    <plugins>-->
+    <!--        &lt;!&ndash; 分表插件配置 &ndash;&gt;-->
+    <!--        <plugin interceptor="com.google.code.shardbatis.plugin.ShardPlugin">-->
+    <!--            <property name="shardingConfig" value="shard-config.xml"/>-->
+    <!--        </plugin>-->
+    <!--    </plugins>-->
+
 </configuration>

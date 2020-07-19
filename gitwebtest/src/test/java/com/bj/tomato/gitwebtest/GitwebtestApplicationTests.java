@@ -21,8 +21,16 @@ public class GitwebtestApplicationTests {
         System.out.println("啊啊啊啊啊啊");
 
         RLock lock = redissonClient.getLock("111");
+
+
         boolean locked = lock.isLocked();
         System.out.println(lock);
+
+    }
+
+    @Test
+    public void test2Lock() {
+
 
     }
 

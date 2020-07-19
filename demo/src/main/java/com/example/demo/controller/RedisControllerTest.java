@@ -63,8 +63,39 @@ public class RedisControllerTest {
         // 参数一：redisScript，参数二：key列表，参数三：arg（可多个）
         Long result = (Long) redisTemplate.execute(redisScript, Collections.singletonList(key), UUID);
         System.out.println(result);
-
         return result.toString();
 
+    }
+
+
+    @RequestMapping(value = "redis/op")
+    public String redisTest() {
+        Boolean aBoolean = redisTemplate.opsForValue().setIfAbsent("123456", "12345678", 10, TimeUnit.SECONDS);
+        Boolean aBoolean1 = redisTemplate.opsForValue().setIfAbsent("123456", "12345", 10, TimeUnit.SECONDS);
+        return aBoolean.toString() + aBoolean1.toString();
+    }
+
+
+    @RequestMapping(value = "redis/map")
+    public String redisMapTest() {
+
+        try {
+            Object o = redisTemplate.opsForHash().get("myMap", "sun");
+            System.out.println("myMap-->sun--->value()--" + o.toString());
+        } catch (Exception e) {
+            redisTemplate.opsForHash().put("myMap", "sun", "chuan");
+        }
+
+        redisTemplate.opsForHash().put("myMap", "sun", "chuan");
+        redisTemplate.opsForHash().put("myMap", "sun1", "chuan");
+
+        Long myMap = redisTemplate.getExpire("myMap");
+        Boolean myMap1 = redisTemplate.expire("myMap", 5, TimeUnit.SECONDS);
+        System.out.println("set expire time is true ?" + myMap1);
+        System.out.println("expire time is -->" + redisTemplate.getExpire("myMap"));
+
+        System.out.println(myMap + " time ");
+        Object o2 = redisTemplate.opsForHash().get("myMap", "sun");
+        return o2.toString();
     }
 }

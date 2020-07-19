@@ -1,10 +1,9 @@
 package com.bj.tomato.gitwebtest.dto.model.request;
 
+import com.sun.istack.internal.NotNull;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author sunfch
@@ -15,12 +14,11 @@ import javax.validation.constraints.NotNull;
 @Data
 public class ProductsQueryReq {
 
-    @NotNull(message = "产品编码不能为空")
+    @NotNull
     private String code;
 
     @NotEmpty(message = "产品不能为空")
     private String productName;
 
-    @Length(min = 0, max = 12)
     private String price;
 }
