@@ -12,17 +12,17 @@ import javax.annotation.Resource;
 @SpringBootApplication(scanBasePackageClasses = DemoApplication.class)
 class DemoApplicationTests {
 
-
     @Resource
     private RedisTemplate redisTemplate;
+
 
     @Test
     void contextLoads() {
         System.out.println("dddddd");
-
         redisTemplate.opsForValue().set("123", "111111111111111111");
         Object o = redisTemplate.opsForValue().get("123");
         System.out.println(o);
     }
+
 
 }

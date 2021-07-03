@@ -3,6 +3,7 @@ package com.sfc.kafka.kafkastudy.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.util.concurrent.ListenableFuture;
 
 /**
  * @author sunfch
@@ -17,7 +18,10 @@ public class Product {
 
     public void send(String name) {
         String dataBody = "这个是第一次实现kafka";
-        kafkaTemplate.send("user", dataBody);
+        ListenableFuture user = kafkaTemplate.send("user", dataBody);
+        System.out.println(user.isDone());
+
+
 
     }
 }

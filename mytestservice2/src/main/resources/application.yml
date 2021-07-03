@@ -1,0 +1,12 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+zuul:
+  routes:
+    producerapi:   #"producerapi"是自己定义的,需要指定它的path,serviceId
+      path: /producerapi/**
+      serviceId: myservice
+      #将/producerapi开头的url路由到指定的producer-server服务
+  prefix: /v1   #路径前缀

@@ -65,27 +65,26 @@ public class RedisController {
         return "成功解锁";
     }
 
-    @RequestMapping("trykey/{key}")
-    public String test2(@PathVariable String key) throws InterruptedException {
+    @RequestMapping("trykey/{key}/{key1}")
+    public String test2(@PathVariable String key, @PathVariable String key1) throws InterruptedException {
 
         // RLock lock = redissonClient.getLock(key);
 
         //  boolean b = lock.tryLock(2, TimeUnit.SECONDS);
 
-        Boolean isLock = redisTemplate1.opsForValue().setIfAbsent(key, "key", 60, TimeUnit.SECONDS);
+        Boolean isLock = redisTemplate1.opsForValue().setIfAbsent(key, key1, 60, TimeUnit.SECONDS);
         if (!isLock) {
             System.out.println("添加锁失败====");
             return "添加锁失败";
         }
         log.info("执行真正的业务逻辑");
-        Thread.sleep(10000L);
+        Thread.sleep(5000L);
         Boolean delete = redisTemplate1.delete(key);
 
         log.info("删除锁的状态是===={}", delete);
         //    lock.unlock();
         //   log.info("==尝试加锁=={}", b);
         return "加锁结果";
-
 
     }
 }

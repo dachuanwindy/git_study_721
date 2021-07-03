@@ -72,16 +72,11 @@ class B extends A {
     }
 }
 
-
 class Test2 {
-
-
     public static void main(String[] args) {
-
         long round = Math.round(12.46);
         System.out.println(round);
     }
-
 
     static class a {
         public String C() {
